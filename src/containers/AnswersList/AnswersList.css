@@ -1,0 +1,12 @@
+.answers-list-container{
+    margin: 20px 0;
+}
+
+.author-detail {
+    font-style: italic;
+    color: gray;
+}
+
+.answer {
+    margin: 15px 0;
+}

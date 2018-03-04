@@ -1,0 +1,9 @@
+.answers-form {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(0,0,0,.1);
+}
+
+.answers-form label + label {
+    margin-left: 20px;
+}

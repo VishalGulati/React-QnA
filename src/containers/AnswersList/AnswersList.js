@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 
 class AnswersList extends Component {
     render () {
-        const answers = this.props.answers;
+        let unsortedAnswers = this.props.answers;
+        const answers = unsortedAnswers.sort(function(a, b) {
+            return b.count - a.count;
+        });
+        console.log(answers);
         const answersStack = answers.map((answer, index) => {
                 return <div className="row answer" key={index}>
                     <Rating count={answer.count} index={index} />

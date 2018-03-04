@@ -17,7 +17,7 @@ class Rating extends Component {
     
     handleDislike(event) {
         event.preventDefault();
-        this.props.onAnswerLike(this.props.index);
+        this.props.onAnswerDisike(this.props.index);
     }
 
     render () {
@@ -34,7 +34,8 @@ class Rating extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAnswerLike: (index) => dispatch({type: actionTypes.LIKE_ANSWER, payload: {index}})
+        onAnswerLike: (index) => dispatch({type: actionTypes.LIKE_ANSWER, payload: {index}}),
+        onAnswerDisike: (index) => dispatch({type: actionTypes.DISLIKE_ANSWER, payload: {index}})
     }
 }
 

@@ -15,11 +15,21 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.LIKE_ANSWER: {
             return {
                 ...state,
-                answers: [...state.answers, state.answers[action.payload.index].count++]
+                answers: state.answers.map((answer, ind) => 
+                    ind === action.payload.index ? 
+                    { ...state.answers[action.payload.index], 
+                        count: ++state.answers[action.payload.index].count 
+                    } : answer)
             };
         }
         case actionTypes.DISLIKE_ANSWER: {
             return {
+                ...state,
+                answers: state.answers.map((answer, ind) => 
+                    ind === action.payload.index ? 
+                    { ...state.answers[action.payload.index], 
+                        count: --state.answers[action.payload.index].count 
+                    } : answer)
             };
         }
         case actionTypes.ADD_ANSWER: {

@@ -40,14 +40,14 @@ class AnswerForm extends Component {
       return (
         <form onSubmit={this.handleSubmit} className="answers-form">
           <label>
-            <input type="text" placeholder="Enter your name" onChange={this.handleNameChange} />
+            <input type="text" required placeholder="Enter your name" onChange={this.handleNameChange} />
           </label>
           <label>
-            <input type="text" placeholder="Enter your email" onChange={this.handleEmailChange} />
+            <input type="email" required placeholder="Enter your email" onChange={this.handleEmailChange} />
           </label>
           <br/>
           <label>
-            <textarea cols="48" onChange={this.handleTextChange} />
+            <textarea cols="48" required onChange={this.handleTextChange} />
           </label>
           <br/>
           <input className="btn btn-danger" type="submit" value="Submit" />
